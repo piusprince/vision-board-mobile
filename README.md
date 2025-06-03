@@ -1,50 +1,101 @@
-# Welcome to your Expo app 👋
+# Vision Board Mobile App 📱✨
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile application built with Expo and React Native that helps users visualize their goals and aspirations through digital vision boards.
 
-## Get started
+![Vision Board App Banner](assets/images/icon.png)
 
-1. Install dependencies
+## 🌟 Features
 
-   ```bash
+- **Create Vision Boards**: Organize your goals into dedicated boards
+- **Track Progress**: Monitor your journey with progress indicators for each goal
+- **Rich Media**: Add images, descriptions, and deadlines to your vision entries
+- **Categorize & Tag**: Use tags to categorize your aspirations
+- **Daily Inspiration**: Get motivated with daily inspiration quotes
+- **Explore Templates**: Browse templates and ideas for your vision boards
+- **Offline Support**: Access your vision boards anywhere, even offline
+
+## 📋 Project Structure
+
+- `/app` - The main application screens using file-based routing
+  - `/(tabs)` - Main tab navigation (Boards, Goals, Inspiration, Journal, Profile)
+  - `/boards` - Board detail screens
+- `/components` - Reusable UI components
+  - `/boards` - Components for board details and entries
+  - `/goals` - Components for goal tracking
+  - `/inspiration` - Components for inspiration and templates
+  - `/ui` - Generic UI components
+- `/data` - Sample data structures and dummy content
+- `/hooks` - Custom React hooks
+- `/store` - Zustand stores for state management
+- `/utils` - Utility functions
+- `/docs` - Project documentation
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+- Expo CLI (`npm install -g expo-cli`)
+- iOS Simulator or Android Emulator (optional)
+
+### Installation
+
+1. Clone the repository
+
+   ```powershell
+   git clone https://github.com/yourusername/vision-board-mobile.git
+   cd vision-board-mobile
+   ```
+
+2. Install dependencies
+
+   ```powershell
    npm install
    ```
 
-2. Start the app
+3. Start the development server
 
-   ```bash
+   ```powershell
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+4. Open the app on your device or emulator
+   - Press `a` for Android
+   - Press `i` for iOS
+   - Scan the QR code with the Expo Go app on your physical device
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🔧 Technologies
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- **Expo & React Native**: Core app framework
+- **TypeScript**: For type safety
+- **NativeWind**: Tailwind CSS for React Native
+- **Expo Router**: File-based routing
+- **Zustand**: State management
+- **React Native Reanimated**: Animations
 
-## Get a fresh project
+## 📝 Documentation
 
-When you're ready, run:
+For more detailed information, check out these documentation files:
 
-```bash
-npm run reset-project
-```
+- [Product Requirements Document](docs/PRD.md)
+- [Development Tasks](docs/Tasks.md)
+- [Development Instructions](docs/instructions.md)
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🔜 Coming Soon
 
-## Learn more
+- Authentication system
+- Cloud synchronization
+- Push notifications for reminders
+- Drag-and-drop board layout
+- AI-powered goal suggestions
+- Social sharing features
+- Export to PDF/Image
 
-To learn more about developing your project with Expo, look at the following resources:
+## 📄 License
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Built with ❤️ using [Expo](https://expo.dev)
