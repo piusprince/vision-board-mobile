@@ -2,7 +2,13 @@
 
 A mobile application built with Expo and React Native that helps users visualize their goals and aspirations through digital vision boards.
 
-![Vision Board App Banner](assets/images/icon.png)
+<!-- ![Vision Board App Banner](assets/images/banner.png) -->
+<!-- ![App Icon](assets/images/icon.png) -->
+![App Screenshot 1](assets/images/app-img.jpg)
+![App Screenshot 2](assets/images/app-img2.jpg)
+![App Screenshot 3](assets/images/app-img3.jpg)
+![App Screenshot 4](assets/images/app-img4.jpg)
+![App Screenshot5](assets/images/app-img5.jpg)
 
 ## 🌟 Features
 
@@ -73,14 +79,6 @@ A mobile application built with Expo and React Native that helps users visualize
 - **Expo Router**: File-based routing
 - **Zustand**: State management
 - **React Native Reanimated**: Animations
-
-## 📝 Documentation
-
-For more detailed information, check out these documentation files:
-
-- [Product Requirements Document](docs/PRD.md)
-- [Development Tasks](docs/Tasks.md)
-- [Development Instructions](docs/instructions.md)
 
 ## 🔜 Coming Soon
 
