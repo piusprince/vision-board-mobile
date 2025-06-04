@@ -1,75 +1,49 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { Ionicons } from "@expo/vector-icons";
+import { FlatList, Text, TouchableOpacity, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import GroupCards from "@/components/group-cards";
+import { dummyVisionBoards, VisionBoardData } from "@/data/dummy-data";
 
 export default function HomeScreen() {
+  const renderVisionBoard = ({ item }: { item: VisionBoardData }) => (
+    <GroupCards
+      id={item.id}
+      subtitle={item.subtitle}
+      title={item.title}
+      description={item.description}
+      imageSource={item.imageSource}
+    />
+  );
+
+  const handleAddNew = () => {
+    // Navigate to add new vision board screen (to be implemented)
+    console.log("Add new vision board");
+  };
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
+    <SafeAreaView className="flex-1 bg-gray-50">
+      <View className="flex-1 px-4 pt-6">
+        <View className="flex-row justify-between items-center mb-6">
+          <Text className="text-2xl font-bold text-gray-900">
+            Vision Boards
+          </Text>
+          <TouchableOpacity
+            onPress={handleAddNew}
+            className="bg-blue-500 w-10 h-10 rounded-full items-center justify-center shadow-lg"
+            activeOpacity={0.7}
+          >
+            <Ionicons name="add" size={24} color="white" />
+          </TouchableOpacity>
+        </View>
+        <FlatList
+          data={dummyVisionBoards}
+          renderItem={renderVisionBoard}
+          keyExtractor={(item) => item.id}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ paddingBottom: 20 }}
         />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+      </View>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
